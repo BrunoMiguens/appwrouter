@@ -23,6 +23,8 @@ Future<dynamic> initialize(Initialize initialize) async {
 
     if (triggeredType == TriggeredType.event) {
       fullEventType = req.headers['x-appwrite-event'] as String;
+      log(fullEventType);
+      log(req.body as Map<String, dynamic>);
       eventType = EventType.fromCode(fullEventType);
       eventMap = req.body as Map<String, dynamic>;
     }
