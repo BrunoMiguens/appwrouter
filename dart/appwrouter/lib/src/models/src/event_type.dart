@@ -16,7 +16,7 @@ enum EventType {
 
   /// Parsing from String code to EventType
   static EventType fromCode(String code) {
-    switch (code) {
+    switch (code.split('.').lastOrNull ?? code) {
       case 'create':
         return EventType.create;
       case 'update':
